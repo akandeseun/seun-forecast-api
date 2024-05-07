@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
+import { WeatherModule } from './weather/weather.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { SequelizeModule } from '@nestjs/sequelize';
       database: process.env.DB_NAME,
       autoLoadModels: true,
     }),
+    WeatherModule,
   ],
   controllers: [AppController],
   providers: [AppService],
